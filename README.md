@@ -7,6 +7,7 @@ This is the official code repo for "Vision-Language Models Empowered Nighttime O
 ## Installation
 
 ####  Our work is based on Python 3.7 and Pytorch 1.7.1+cu111 due to the  [CLIP requirement](https://github.com/openai/CLIP). The hardware is Nvidia Tesla V100 single GPU. Give a big thanks to Dr. Li WuYang with his work [SIGMA](https://github.com/CityU-AIM-Group/SIGMA). We use it as baseline. The trained pth are  uploaded to [google drive](https://drive.google.com/drive/folders/1pMiPDe1If7rssy6332jL6lu_MAzy8UXo?usp=drive_link).
+![image](https://github.com/user-attachments/assets/9d9c40fc-6f68-4742-a9e1-3af3512f473c)
 
 #### Basic Installation
 
@@ -52,7 +53,7 @@ pip install git+https://github.com/openai/CLIP.git
 
 #### Before Training, you should prepare for the dataset, [SHIFT, BDD100k](https://www.dropbox.com/scl/fo/258uzp6i0dz17zsj234r6/h?rlkey=kb6brfk1oqc1ddsa3ulz8v9ei&e=1&dl=0) and FLIR. Thanks to the authors of [2PCNET](https://github.com/mecarill/2pcnet). The FLIR dataset has been uploaded to [cloud]().
 
-#### After dataset preparation, you can train the model by change the yaml config file and dataset path file.
+#### After dataset preparation, you can train the model by change the yaml [config file](https://github.com/GingerCohle/VLMCSHFG/blob/main/configs/VLMCSHFG/vlmcshfg_res50_cityscapace_to_foggy.yaml#L53) for class number and [dataset path file](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/config/paths_catalog.py#L99).
 
 ## Training
 
@@ -71,10 +72,12 @@ CUDA_VISIBLE_DEVICES=0 python tools/test_net.py --config-file configs/VLMCSHFG/v
 ## Code Inside
 
 #### CCCS and VLMOE.
+![image](https://github.com/user-attachments/assets/bdf611ee-637b-40d0-92d9-dd4bd3a26f19)
 
 
 
-#### CCCS clusting in ./fcos_core/modeling/rpn/fcos/loss.py
+#### CCCS clusting in  [loss]([https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/graph_matching_head.py](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/loss.py) 
+
 
 ```python
 def clust_rank(mat, initial_rank=None, distance='cosine'):
@@ -120,7 +123,7 @@ def get_clust(a, orig_dist, min_sim=None):
     return u, num_clust
 ```
 
-#### VLMOE in ./fcos_core/modeling/rpn/fcos/graph_matching_head.py 
+#### VLMOE in  [graph_matching_head](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/graph_matching_head.py) 
 
 ##### OPL loss
 
@@ -153,13 +156,15 @@ class OrthogonalProjectionLoss(nn.Module):
        return loss
 ```
 
-##### The VLMOE are combined with CLIP in ./fcos_core/modeling/rpn/fcos/graph_matching_head.py 
+##### The VLMOE are combined with CLIP in  [graph_matching_head](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/graph_matching_head.py) 
+
 
 
 
 #### Hallucination Feature Generator
+![image](https://github.com/user-attachments/assets/2b4d6f3d-a748-4125-bb8f-ade0dd1285fc)
 
- all defined in ./fcos_core/modeling/rpn/fcos/graph_matching_head.py 
+ all defined in [graph_matching_head](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/graph_matching_head.py) 
 
 ```python
 for cls in tg_labels.unique().long():
