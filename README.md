@@ -14,7 +14,7 @@ This is the official code repo for "Vision-Language Models Empowered Nighttime O
 conda create -n vldadaptor  python==3.7 -y
 conda activate vldadaptor
 conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.2 -c pytorch
-git clone https://github.com/GingerCohle/VLDadaptor.git
+git clone https://github.com/GingerCohle/VLMCSHFG.git
 cd VLDadaptor
 git clone https://github.com/cocodataset/cocoapi.git
 cd cocoapi/PythonAPI/
