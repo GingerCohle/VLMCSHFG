@@ -76,7 +76,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/test_net.py --config-file configs/VLMCSHFG/v
 
 
 
-#### CCCS clusting in  [loss](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/graph_matching_head.py](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/loss.py) 
+#### CCCS clusting in  [loss](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/modeling/rpn/fcos/loss.py) 
 
 
 ```python
