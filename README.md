@@ -51,7 +51,7 @@ pip install git+https://github.com/openai/CLIP.git
 
 ## Setting
 
-#### Before Training, you should prepare for the dataset, [SHIFT, BDD100k](https://www.dropbox.com/scl/fo/258uzp6i0dz17zsj234r6/h?rlkey=kb6brfk1oqc1ddsa3ulz8v9ei&e=1&dl=0) and FLIR. Thanks to the authors of [2PCNET](https://github.com/mecarill/2pcnet). The FLIR dataset has been uploaded to [cloud]().
+#### Before Training, you should prepare for the dataset, [SHIFT, BDD100k](https://www.dropbox.com/scl/fo/258uzp6i0dz17zsj234r6/h?rlkey=kb6brfk1oqc1ddsa3ulz8v9ei&e=1&dl=0) and FLIR. Thanks to the authors of [2PCNET](https://github.com/mecarill/2pcnet). The FLIR dataset has been uploaded to [Baidu Cloud]( https://pan.baidu.com/s/1_sjia3kP-JGs69W0AxzYoQ) with password c555.
 
 #### After dataset preparation, you can train the model by change the yaml [config file](https://github.com/GingerCohle/VLMCSHFG/blob/main/configs/VLMCSHFG/vlmcshfg_res50_cityscapace_to_foggy.yaml#L53) for class number and [dataset path file](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/config/paths_catalog.py#L99).
 
