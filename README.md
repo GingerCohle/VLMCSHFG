@@ -1,7 +1,15 @@
 # [TIP 25] VLMCSHFG
 This is the official code repo for "Vision-Language Models Empowered Nighttime Object Detection  with Consistency Sampler and Hallucination Feature Generator"
 # Vision-Language Models Empowered Nighttime Object Detection  with Consistency Sampler and Hallucination Feature Generator (Under Review)
-
+@article{he2025vision,
+  title={Vision--Language Models Empowered Nighttime Object Detection With Consistency Sampler and Hallucination Feature Generator},
+  author={He, Lihuo and Ke, Junjie and Wang, Zhenghao and Li, Jie and Zhou, Kai and Wang, Qi and Gao, Xinbo},
+  journal={IEEE Transactions on Image Processing},
+  volume={34},
+  pages={8345--8360},
+  year={2025},
+  publisher={IEEE}
+}
 ## UPDATE 2025-8-15
 
 #### Based on the valuable suggestions from the reviewers, we have applied the proposed methods to training with the [Diverse Weather Dataset](https://drive.google.com/drive/folders/1IIUnUrJrvFgPzU8D6KtV0CXa8k1eBV9B) (Thanks to Dr. [AmingWu](https://github.com/AmingWu)), which contains four diverse weather conditions. We follow the source-only cross-domain and domain generalization object detection (S-DGOD) setting, in which target domain images without annotations are completely excluded from the training process. The target domains are used solely for validating the trained object detector. We have updated the configuration files in [diverse101.py](https://github.com/GingerCohle/VLMCSHFG/blob/main/configs/VLMCSHFG/diverser101.yaml), where you must set the source and target domain paths (e.g., *Day-Sunny* for source-only cross-domain and S-DGOD). During validation, you may change the validation path accordingly. An example is also provided in [paths_catalog_SGDOD.py](https://github.com/GingerCohle/VLMCSHFG/blob/main/fcos_core/config/paths_catalog_SGDOD.py).
